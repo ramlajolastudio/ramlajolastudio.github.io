@@ -762,16 +762,6 @@ input, textarea, select { font-family: inherit; }
     margin-bottom: 64px;
 }
 
-.section-number {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    color: var(--accent-neon);
-    letter-spacing: 2px;
-    display: block;
-    margin-bottom: 12px;
-    text-shadow: 0 0 12px var(--neon-glow);
-}
-
 .section-title {
     font-family: 'Space Grotesk', sans-serif;
     font-size: clamp(32px, 5vw, 48px);
