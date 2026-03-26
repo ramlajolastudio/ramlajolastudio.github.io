@@ -1,3 +1,127 @@
+/* ===== FUTURISTIC INTRO ===== */
+(function() {
+    const overlay = document.getElementById('introOverlay');
+    const introCanvas = document.getElementById('introCanvas');
+    const introCtx = introCanvas.getContext('2d');
+    const taglineEl = document.getElementById('introTagline');
+
+    document.body.classList.add('intro-active');
+
+    // Resize intro canvas
+    function resizeIntroCanvas() {
+        introCanvas.width = window.innerWidth;
+        introCanvas.height = window.innerHeight;
+    }
+    resizeIntroCanvas();
+    window.addEventListener('resize', resizeIntroCanvas);
+
+    // Intro particle grid
+    const gridParticles = [];
+    const gridCols = Math.floor(window.innerWidth / 30);
+    const gridRows = Math.floor(window.innerHeight / 30);
+
+    for (let i = 0; i < 80; i++) {
+        gridParticles.push({
+            x: Math.random() * introCanvas.width,
+            y: Math.random() * introCanvas.height,
+            size: Math.random() * 1.5 + 0.5,
+            speedX: (Math.random() - 0.5) * 1.5,
+            speedY: (Math.random() - 0.5) * 1.5,
+            opacity: Math.random() * 0.5 + 0.2,
+            color: Math.random() > 0.5 ? '#e6b800' : '#ccff00'
+        });
+    }
+
+    let introAnimId;
+    function animateIntroParticles() {
+        introCtx.clearRect(0, 0, introCanvas.width, introCanvas.height);
+
+        gridParticles.forEach(p => {
+            p.x += p.speedX;
+            p.y += p.speedY;
+
+            if (p.x < 0) p.x = introCanvas.width;
+            if (p.x > introCanvas.width) p.x = 0;
+            if (p.y < 0) p.y = introCanvas.height;
+            if (p.y > introCanvas.height) p.y = 0;
+
+            introCtx.beginPath();
+            introCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            introCtx.fillStyle = p.color;
+            introCtx.globalAlpha = p.opacity;
+            introCtx.fill();
+        });
+
+        // Draw connecting lines
+        gridParticles.forEach((a, i) => {
+            gridParticles.slice(i + 1).forEach(b => {
+                const dx = a.x - b.x;
+                const dy = a.y - b.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 120) {
+                    introCtx.beginPath();
+                    introCtx.moveTo(a.x, a.y);
+                    introCtx.lineTo(b.x, b.y);
+                    introCtx.strokeStyle = '#e6b800';
+                    introCtx.globalAlpha = (1 - dist / 120) * 0.15;
+                    introCtx.lineWidth = 0.5;
+                    introCtx.stroke();
+                }
+            });
+        });
+
+        introCtx.globalAlpha = 1;
+        introAnimId = requestAnimationFrame(animateIntroParticles);
+    }
+    animateIntroParticles();
+
+    // Letter scramble effect
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&';
+    const letters = document.querySelectorAll('.intro-letter:not(.intro-space)');
+
+    letters.forEach((letter, i) => {
+        const original = letter.textContent;
+        const startTime = 800 + i * 70;
+        let scrambleInterval;
+
+        setTimeout(() => {
+            let count = 0;
+            scrambleInterval = setInterval(() => {
+                letter.textContent = chars[Math.floor(Math.random() * chars.length)];
+                count++;
+                if (count > 6) {
+                    clearInterval(scrambleInterval);
+                    letter.textContent = original;
+                }
+            }, 50);
+        }, startTime);
+    });
+
+    // Tagline typing effect
+    const taglineText = 'CREATIVE  STUDIO';
+    let charIndex = 0;
+    setTimeout(() => {
+        const typeInterval = setInterval(() => {
+            taglineEl.textContent = taglineText.substring(0, charIndex + 1);
+            charIndex++;
+            if (charIndex >= taglineText.length) {
+                clearInterval(typeInterval);
+                setTimeout(() => taglineEl.classList.add('typing-done'), 500);
+            }
+        }, 80);
+    }, 2000);
+
+    // Exit intro after animations complete
+    setTimeout(() => {
+        overlay.classList.add('intro-exit');
+        setTimeout(() => {
+            overlay.remove();
+            document.body.classList.remove('intro-active');
+            cancelAnimationFrame(introAnimId);
+        }, 800);
+    }, 3800);
+})();
+
 /* ===== PARTICLE BACKGROUND ===== */
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');

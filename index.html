@@ -8,6 +8,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- ===== FUTURISTIC INTRO ===== -->
+    <div class="intro-overlay" id="introOverlay">
+        <canvas id="introCanvas"></canvas>
+        <div class="intro-content">
+            <div class="intro-glitch-lines"></div>
+            <div class="intro-name" id="introName">
+                <span class="intro-letter" style="--i:0">R</span>
+                <span class="intro-letter" style="--i:1">A</span>
+                <span class="intro-letter" style="--i:2">M</span>
+                <span class="intro-letter intro-space" style="--i:3">&nbsp;</span>
+                <span class="intro-letter" style="--i:4">L</span>
+                <span class="intro-letter" style="--i:5">A</span>
+                <span class="intro-letter" style="--i:6">J</span>
+                <span class="intro-letter" style="--i:7">O</span>
+                <span class="intro-letter" style="--i:8">L</span>
+                <span class="intro-letter" style="--i:9">A</span>
+            </div>
+            <div class="intro-tagline" id="introTagline"></div>
+            <div class="intro-beam"></div>
+        </div>
+        <div class="intro-scanline"></div>
+        <div class="intro-corner intro-corner--tl"></div>
+        <div class="intro-corner intro-corner--tr"></div>
+        <div class="intro-corner intro-corner--bl"></div>
+        <div class="intro-corner intro-corner--br"></div>
+    </div>
+
     <!-- Animated particle canvas background -->
     <canvas id="particles"></canvas>
 

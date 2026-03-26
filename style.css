@@ -1,3 +1,231 @@
+/* ===== FUTURISTIC INTRO ===== */
+.intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.intro-overlay.intro-exit {
+    animation: introDissolve 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+#introCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+}
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.intro-name {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    overflow: hidden;
+}
+
+.intro-letter {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(42px, 8vw, 90px);
+    font-weight: 700;
+    background: linear-gradient(135deg, #e6b800, #ccff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0;
+    transform: translateY(60px) scaleY(0);
+    filter: blur(8px);
+    animation: letterReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(0.8s + var(--i) * 0.07s);
+    position: relative;
+    text-shadow: none;
+}
+
+.intro-letter::after {
+    content: attr(data-scramble);
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #e6b800, #ccff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.intro-space {
+    width: 0.3em;
+}
+
+.intro-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(13px, 2vw, 18px);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeSlideUp 0.6s ease forwards;
+    animation-delay: 2s;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid rgba(230, 184, 0, 0.8);
+}
+
+.intro-tagline.typing-done {
+    border-right-color: transparent;
+}
+
+/* Scanning beam */
+.intro-beam {
+    position: absolute;
+    left: -10%;
+    top: 50%;
+    width: 120%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e6b800, #ccff00, #e6b800, transparent);
+    transform: translateY(-50%) scaleX(0);
+    box-shadow: 0 0 30px rgba(230, 184, 0, 0.6), 0 0 60px rgba(204, 255, 0, 0.3);
+    animation: beamSweep 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 2.8s;
+}
+
+/* CRT scanlines */
+.intro-scanline {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.15) 2px,
+        rgba(0, 0, 0, 0.15) 4px
+    );
+    pointer-events: none;
+}
+
+/* Corner brackets */
+.intro-corner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 4;
+    opacity: 0;
+    animation: cornerFade 0.4s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.intro-corner::before,
+.intro-corner::after {
+    content: '';
+    position: absolute;
+    background: rgba(230, 184, 0, 0.5);
+}
+
+.intro-corner--tl { top: 30px; left: 30px; }
+.intro-corner--tl::before { top: 0; left: 0; width: 20px; height: 2px; }
+.intro-corner--tl::after { top: 0; left: 0; width: 2px; height: 20px; }
+
+.intro-corner--tr { top: 30px; right: 30px; }
+.intro-corner--tr::before { top: 0; right: 0; width: 20px; height: 2px; }
+.intro-corner--tr::after { top: 0; right: 0; width: 2px; height: 20px; }
+
+.intro-corner--bl { bottom: 30px; left: 30px; }
+.intro-corner--bl::before { bottom: 0; left: 0; width: 20px; height: 2px; }
+.intro-corner--bl::after { bottom: 0; left: 0; width: 2px; height: 20px; }
+
+.intro-corner--br { bottom: 30px; right: 30px; }
+.intro-corner--br::before { bottom: 0; right: 0; width: 20px; height: 2px; }
+.intro-corner--br::after { bottom: 0; right: 0; width: 2px; height: 20px; }
+
+/* Glitch grid lines */
+.intro-glitch-lines {
+    position: absolute;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background:
+        linear-gradient(90deg, transparent 49.5%, rgba(230, 184, 0, 0.03) 49.5%, rgba(230, 184, 0, 0.03) 50.5%, transparent 50.5%),
+        linear-gradient(0deg, transparent 49.5%, rgba(204, 255, 0, 0.03) 49.5%, rgba(204, 255, 0, 0.03) 50.5%, transparent 50.5%);
+    background-size: 60px 60px;
+    animation: gridDrift 8s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes letterReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) scaleY(0);
+        filter: blur(8px);
+    }
+    50% {
+        opacity: 1;
+        filter: blur(2px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes beamSweep {
+    0% { transform: translateY(-50%) scaleX(0); opacity: 1; }
+    50% { transform: translateY(-50%) scaleX(1); opacity: 1; }
+    100% { transform: translateY(-50%) scaleX(1); opacity: 0; }
+}
+
+@keyframes cornerFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes gridDrift {
+    from { transform: translate(0, 0); }
+    to { transform: translate(60px, 60px); }
+}
+
+@keyframes introDissolve {
+    0% {
+        opacity: 1;
+        filter: blur(0) brightness(1);
+    }
+    40% {
+        filter: blur(0) brightness(2);
+    }
+    100% {
+        opacity: 0;
+        filter: blur(12px) brightness(3);
+        transform: scale(1.05);
+    }
+}
+
+/* Prevent scrolling during intro */
+body.intro-active {
+    overflow: hidden;
+}
+
 /* ===== RESET & BASE ===== */
 *, *::before, *::after {
     margin: 0;
