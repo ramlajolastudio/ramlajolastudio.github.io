@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ram Lajola | Video Editor &bull; Graphic Artist &bull; AI Specialist</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated particle canvas background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Custom cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-logo">
+            <span class="logo-text">Ram Lajola</span>
+            <span class="logo-dot"></span>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#work" class="nav-link">Work</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#services" class="mobile-link">Services</a>
+        <a href="#work" class="mobile-link">Work</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content glass-box hero-glass">
+            <div class="hero-tag animate-in">
+                <span class="tag-line"></span>
+                <span>Creative Professional</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line animate-in" style="--delay: 0.2s">Video Editor</span>
+                <span class="title-line animate-in" style="--delay: 0.4s">Graphic Artist</span>
+                <span class="title-line animate-in highlight" style="--delay: 0.6s">AI Specialist</span>
+            </h1>
+            <p class="hero-desc animate-in" style="--delay: 0.8s">
+                Welcome to Ram's Creative Space — Where Ideas Transform into Visual Masterpieces.
+                Crafting visual stories through creativity and cutting-edge AI technology.
+            </p>
+            <div class="hero-cta animate-in" style="--delay: 1s">
+                <a href="#work" class="btn btn-primary">
+                    <span>View My Work</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <div class="scroll-dot"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container glass-box section-glass">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title reveal">About Me</h2>
+                <div class="section-line reveal"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <div class="image-frame">
+                        <div class="image-placeholder">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <circle cx="12" cy="8" r="4"/>
+                                <path d="M4 20c0-4 4-7 8-7s8 3 8 7"/>
+                            </svg>
+                            <span>Your Photo</span>
+                        </div>
+                        <div class="image-border"></div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p class="about-intro reveal">
+                        I'm a multidisciplinary creative professional from the Philippines,
+                        bridging traditional visual arts with emerging AI technologies.
+                    </p>
+                    <p class="about-body reveal">
+                        From Instagram Reels and YouTube content to logo design, product mockups,
+                        and advertising campaigns — I bring a unique perspective to every project.
+                        My work combines artistic vision with technical precision, leveraging AI tools
+                        to push creative boundaries and deliver results that stand out.
+                    </p>
+                    <div class="about-stats reveal">
+                        <div class="stat">
+                            <span class="stat-number" data-count="50">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="30">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container glass-box section-glass">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title reveal">What I Do</h2>
+                <div class="section-line reveal"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal" style="--delay: 0.1s">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <path d="M10 9l4 2-4 2V9z"/>
+                            <path d="M8 21h8M12 17v4"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Video Editing & Shorts</h3>
+                    <p class="service-desc">
+                        Professional video editing and short-form content for Instagram Reels,
+                        YouTube Shorts, and TikTok. Cinematic color grading, motion graphics,
+                        and seamless transitions that tell your story.
+                    </p>
+                    <ul class="service-tools">
+                        <li>Premiere Pro</li>
+                        <li>After Effects</li>
+                        <li>CapCut</li>
+                        <li>DaVinci Resolve</li>
+                    </ul>
+                </div>
+                <div class="service-card reveal" style="--delay: 0.2s">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Graphic & Product Design</h3>
+                    <p class="service-desc">
+                        Logo design, YouTube thumbnails & channel art, product mockups,
+                        advertising materials, and complete brand identity systems that make
+                        your brand stand out.
+                    </p>
+                    <ul class="service-tools">
+                        <li>Photoshop</li>
+                        <li>Illustrator</li>
+                        <li>Figma</li>
+                        <li>Canva</li>
+                    </ul>
+                </div>
+                <div class="service-card featured reveal" style="--delay: 0.3s">
+                    <div class="service-badge">Featured</div>
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5V11h3a3 3 0 0 1 3 3v1"/>
+                            <path d="M8 2a4 4 0 0 0-4 4c0 1.5.8 2.8 2 3.5V11H3a3 3 0 0 0-3 3v1"/>
+                            <circle cx="12" cy="18" r="4"/>
+                            <path d="M12 16v4M10 18h4"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">AI Solutions</h3>
+                    <p class="service-desc">
+                        Leveraging AI for content generation, image synthesis, workflow automation,
+                        and intelligent creative solutions that amplify your vision.
+                    </p>
+                    <ul class="service-tools">
+                        <li>Midjourney</li>
+                        <li>Stable Diffusion</li>
+                        <li>ChatGPT</li>
+                        <li>RunwayML</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work / Portfolio Section -->
+    <section class="section work" id="work">
+        <div class="container glass-box section-glass">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title reveal">Selected Work</h2>
+                <div class="section-line reveal"></div>
+            </div>
+            <div class="work-filters reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="video">Video & Shorts</button>
+                <button class="filter-btn" data-filter="design">Design & Branding</button>
+            </div>
+            <div class="work-grid">
+                <!-- Shorts / Reels -->
+                <div class="work-item reveal" data-category="video" style="--delay: 0.1s">
+                    <a href="https://www.instagram.com/reel/C1rzld6JBKe/" target="_blank" rel="noopener">
+                        <div class="work-thumbnail">
+                            <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SSW-De7YrJEL33AlFit2UNkMCZjJfGbe2Smheo7-IDFmxgNetuM99K1ar0DJsyFmO6npqX884_1l90jStpSlx2xeIFLwPY8IGZzOs-B6BGwAELbm6VOIQ4dr1OIFXb01qXkrear2IiAnDkcNUXGLDRwrBThNbDlXM92lqg6ivNzcsMuFsMKZt1_IQGho4NjcKWpYvsd5k3TmKLBi0Qomoza6Pnz1zWgnX9z=w1280" alt="Instagram Reel — Short-Form Edit" class="work-img" loading="lazy">
+                            <div class="work-overlay">
+                                <span class="work-view">Watch Reel</span>
+                            </div>
+                            <div class="work-play-badge">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="work-info">
+                        <span class="work-category">Video Editing</span>
+                        <h3 class="work-title">Instagram Reel — Short-Form Edit</h3>
+                    </div>
+                </div>
+                <div class="work-item reveal" data-category="video" style="--delay: 0.15s">
+                    <a href="https://www.instagram.com/reel/C1ZsORJJMq-/" target="_blank" rel="noopener">
+                        <div class="work-thumbnail">
+                            <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SSKR2sRY0eYTTfTjqYppuOZMpknlaTJIDLgEAhwLj2w99YfAzV44a9unOUQU7Qgo-lDAViIRJuRyZNgLTpj6vWBsLF-i9yub1BAlZSlVZJMAo8DiZhFTDEOBqDXkyYQV8V1hKvVdTqzGam-9UuNXz5BCJ00TYv9NIuPd9kTO9DILxSOZgzJAfbsFc_SULMkLUQTv-Vq9VeEGN_gIUnRSRH5_dza1nwHsh_3OQI=w1280" alt="Instagram Reel — Motion Edit" class="work-img" loading="lazy">
+                            <div class="work-overlay">
+                                <span class="work-view">Watch Reel</span>
+                            </div>
+                            <div class="work-play-badge">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="work-info">
+                        <span class="work-category">Video Editing</span>
+                        <h3 class="work-title">Instagram Reel — Motion Edit</h3>
+                    </div>
+                </div>
+                <div class="work-item reveal" data-category="video" style="--delay: 0.2s">
+                    <a href="https://www.instagram.com/reel/C1HDyMNJW6d/" target="_blank" rel="noopener">
+                        <div class="work-thumbnail">
+                            <img src="https://lh3.googleusercontent.com/sitesv/APaQ0STsVT43hzNnhYrbfPaOsp4M3Y9TnfoTYj9pJYqibaA_uMRMpqQ_7Q5h0o79sYuHHR6kYQ2vJfpAOin9E3XegIbcTrDWqVNg1vyb0Lg5FU7myF0vCOipoHsbMX0_IgZiBoFwkiATUzS_PLNnAXwNcoxVAXGganNzN44C1-jvmZn8weVjP_ox38FB4hGVWsSi4BI8rthWYumcOGXsWUYvLsEgc6tFkV0REa7SeMo=w1280" alt="Instagram Reel — Creative Short" class="work-img" loading="lazy">
+                            <div class="work-overlay">
+                                <span class="work-view">Watch Reel</span>
+                            </div>
+                            <div class="work-play-badge">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="work-info">
+                        <span class="work-category">Video Editing</span>
+                        <h3 class="work-title">Instagram Reel — Creative Short</h3>
+                    </div>
+                </div>
+
+                <!-- Thumbnail Designs -->
+                <div class="work-item reveal" data-category="design" style="--delay: 0.1s">
+                    <div class="work-thumbnail">
+                        <img src="https://lh3.googleusercontent.com/sitesv/APaQ0ST4r16sKEbfJKjs_TmhspaKgL_frWS08tTaGoHBLz1QAyJGPhmaPtV-TmvQWcpSqywhqeAP_2Nar8rJ79ED8wEhD6rPBFxClD7t905VOsihwWYISzScOjnLq0wE1mS1prgv-OXATggOx_ef9ysP0ufXPi4SS_gbiiFQAEKVd_XyOsU7z0EOTicYZldmH6sE8G4nDZHK58tiF1dvKavl-gHN6om_-jWH-hhPqyE=w1280" alt="YouTube Thumbnail Design 1" class="work-img" loading="lazy">
+                        <div class="work-overlay">
+                            <span class="work-view">View Project</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-category">Graphic Design</span>
+                        <h3 class="work-title">YouTube Thumbnail Design</h3>
+                    </div>
+                </div>
+                <div class="work-item reveal" data-category="design" style="--delay: 0.15s">
+                    <div class="work-thumbnail">
+                        <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SS8jw_8pfz-Ldlq3p33jwYOXjj_bRPthEWcJXcJwJwph0y-0kUt-iHYc_OW0WX0RksuaWVq4pqSst4adkSFc-jXKoPqYaG1lJ6LNLOBXXFQCcV8HvyoieezKDoPJkCUlQlXiLQsVoE83A6xTj40tzlSG9OKR-pNzy_VqUGl0UjCiUUVFFubprjJk0mSg3VEH-p8sSzaOQ34RSSuMMDvGEwQnYo39ng9iw=w1280" alt="YouTube Thumbnail Design 2" class="work-img" loading="lazy">
+                        <div class="work-overlay">
+                            <span class="work-view">View Project</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-category">Graphic Design</span>
+                        <h3 class="work-title">YouTube Thumbnail Design</h3>
+                    </div>
+                </div>
+                <div class="work-item reveal" data-category="design" style="--delay: 0.2s">
+                    <div class="work-thumbnail">
+                        <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SRSZ4rikcJcgdsv5AqV13Su39gywoDNcd0kV9kIQYep30W1GbJNkt1Uy7Wmby7zFkJdPAQ3vEnAqy6xAfV-8q4xFDqc9CtGV91pFm59u02ELbV9mwp_bhvdhVevMHkC8p68yM6nPn81c48GC0hfbOUp0MvqSyGcRLQMiYRTXIM5oBiPzj02B23evefw3KSvK0Oi2BB-eIgSU1UUMSloAI2EV9WyhKe-sIGWock=w1280" alt="YouTube Thumbnail Design 3" class="work-img" loading="lazy">
+                        <div class="work-overlay">
+                            <span class="work-view">View Project</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-category">Graphic Design</span>
+                        <h3 class="work-title">YouTube Thumbnail Design</h3>
+                    </div>
+                </div>
+
+                <!-- Logo Designs -->
+                <div class="work-item reveal" data-category="design" style="--delay: 0.1s">
+                    <div class="work-thumbnail">
+                        <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SSvy6EJVmWSreVBaDs9VNE4qukBhJErxnEPg5_8zz1XxQlPIywNZ_M1he7S5GSBeAqCwe-g5JXfVtH5q0t4Tatw7ZndZtSRhyir4FVSeRBKQeXaB05T1KDeWR900vjSoqq2eUo3JolZEEjsQnbG64RlZOmV32P1qGPngfopr1GdEK4Ay8_RRuYbKlZxyZbv9wc0OCcXST80gb_ixnmSCzhhjSqHL4Z0ksOhSOo=w1280" alt="Baking Logo Design" class="work-img" loading="lazy">
+                        <div class="work-overlay">
+                            <span class="work-view">View Project</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-category">Logo Design</span>
+                        <h3 class="work-title">Baking Logo Design</h3>
+                    </div>
+                </div>
+                <div class="work-item reveal" data-category="design" style="--delay: 0.15s">
+                    <div class="work-thumbnail">
+                        <img src="https://lh3.googleusercontent.com/sitesv/APaQ0STChjUXPPrJIN3Mvhxg2t9rWS-WZcI_lWAyO0KvjmJ993qVbSk31kp0tNmxVOfREw6Ee-75JuH849zdVJHfblejRzL6QJGClTBSC6df0_J5bEgK6qpdnCtBVby7Qs-hTVwA_WdEGwzG5PXouB707G8ZeTNPQGFTYcSkeG_ChsAXLt5NLEWWiIyiLDyDVESYHdwSlP6ybpaJwZphInMVEuEYK-XCeMTCsbxX=w1280" alt="Logo Sample Mockup" class="work-img" loading="lazy">
+                        <div class="work-overlay">
+                            <span class="work-view">View Project</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-category">Logo Design</span>
+                        <h3 class="work-title">Brand Logo Mockup</h3>
+                    </div>
+                </div>
+                <div class="work-item reveal" data-category="design" style="--delay: 0.2s">
+                    <div class="work-thumbnail">
+                        <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SQti6e6HLkTvaTQ6dxb71VbXuLw503zx2-u27xX3skFyYZsfrxOJrHLkWnmgloN7MO4E3rFNI1Xq-WCHjy8ZOr3SdP6y16LoNMSCtCR5uWUV4sdpe4jmsevbenSfVU1K3g-1KH0XDl2KSDxq-9dB-heQPvmZQ5X_adg1eJNp-ah3CIosmpbLQ-4vtg=w1280" alt="Logo Sample" class="work-img" loading="lazy">
+                        <div class="work-overlay">
+                            <span class="work-view">View Project</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-category">Logo Design</span>
+                        <h3 class="work-title">Logo Design Sample</h3>
+                    </div>
+                </div>
+
+                <!-- YouTube Channel Art -->
+                <div class="work-item reveal" data-category="design" style="--delay: 0.1s">
+                    <div class="work-thumbnail">
+                        <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SQ7zwpq5oVGIxzR3KcKayzVlr5E5fdvCxpWmXYcpCB3uqadFW883MQ2TzRgcq5v-dy74JensYfJf1qxYuPiUZUYPTgxGIEiSQfXApgRm5fV_0HeJiQj9P9TCKYUEJARAPFHE70aSXHvCfqgTBxY9gSxSSpsbsSHXHsIDm4LFD5TgMPUaaeIkoi2IcKLbAuUOcpoDPj4ilLG7wzUTiNPqEn3tNdcRwlzD6i5onk=w1280" alt="YouTube Banner Design" class="work-img" loading="lazy">
+                        <div class="work-overlay">
+                            <span class="work-view">View Project</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-category">Channel Design</span>
+                        <h3 class="work-title">YouTube Banner — Business Tips</h3>
+                    </div>
+                </div>
+                <div class="work-item reveal" data-category="design" style="--delay: 0.15s">
+                    <div class="work-thumbnail">
+                        <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SRTk5WPidYZh4qcZmxkJjb-01A2eSntKEwzkk6Rrn-FEJr_SJn2UC91lo9jiAuxUFXu3q85Wkl4dHQI48TzDEjO6C28_vMLxOwy2-pdJY6zrNzoUYdzvoBriXj0DycTMVj3YhV-zQGnVNj7g6ZBb-PXVh1_6jGXcnIqqEclwRAdd87tcYp2ZXoYLPpr51pILuKnCsbRMvZctlNFSGF2Ouhm-XgP4rylJwHaSoI=w1280" alt="Business Channel Design" class="work-img" loading="lazy">
+                        <div class="work-overlay">
+                            <span class="work-view">View Project</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-category">Channel Design</span>
+                        <h3 class="work-title">YouTube Channel Branding</h3>
+                    </div>
+                </div>
+
+                <!-- Product Designs -->
+                <div class="work-item reveal" data-category="design" style="--delay: 0.1s">
+                    <div class="work-thumbnail">
+                        <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SRGprzvazfH_GA2qUpW5gQqlffR5wlibhTQ8cxrIAr6hyEc1lVFrL-2ySvhev8FT1PN1HwEHP0Nr_3YTU34ABjj3hUrHcDCfQrRdjaeGk9vfU99moHJ75buT16WKQzLPTBBJ2TSnFzGkqzW91N6Hw-xUuiR4OYRewHhMiFnxUqK3kLhg26PEJiX9N6OdP4SfHgXshoIXytCJR9_YMtApWSbMHUt46yU-YvCgFk=w1280" alt="Product Design 1" class="work-img" loading="lazy">
+                        <div class="work-overlay">
+                            <span class="work-view">View Project</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-category">Product Design</span>
+                        <h3 class="work-title">Product Mockup Design</h3>
+                    </div>
+                </div>
+                <div class="work-item reveal" data-category="design" style="--delay: 0.15s">
+                    <div class="work-thumbnail">
+                        <img src="https://lh3.googleusercontent.com/sitesv/APaQ0STB3WmTkm8RRNhq88IaaTmwDF1PdDyTDDXFC0Swc2uQsbF8LX2KnQtdNSeCLlRKTdR8-KMsUr4a8SUfm_qD3q-fs711inBYkSiDFiwEmH4eODZcW82MGai7cMrhMdqeQ7Vf9GdUoH3t1_Xj54LClFnuJGuvSTO5GNdh4QsSdUh8S8J2u-41U1Ke6VdjcjbWs_p8eBcBJKTlZ_Tn_gZZ0YqXTOVqPtHu4hS84AA=w1280" alt="Product Design 2" class="work-img" loading="lazy">
+                        <div class="work-overlay">
+                            <span class="work-view">View Project</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-category">Product Design</span>
+                        <h3 class="work-title">Product Packaging Design</h3>
+                    </div>
+                </div>
+                <div class="work-item reveal" data-category="design" style="--delay: 0.2s">
+                    <div class="work-thumbnail">
+                        <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SS-l7Bbr838UR5pp34SuiTXgbCHHMOwRiu4Xec9HcChkc4RSIsiKeSG77RxO_F9pfV_FQV07aM_gHTzpQcbNYtemSkZxFdq2uAPsjEfi29islWLWrRx7jvoHofNY0CKeIOqdVFEeyLjWCkoAonQYjFAA8UEM8gXAZPMXCC-qovBNjRZdZLfEX5Mc-8W0HQ86m58SU4U466JwmRKbdlypYrv0Hb_cQRzXlfd=w1280" alt="Product Design 3" class="work-img" loading="lazy">
+                        <div class="work-overlay">
+                            <span class="work-view">View Project</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-category">Product Design</span>
+                        <h3 class="work-title">Product Label & Branding</h3>
+                    </div>
+                </div>
+
+                <!-- Moonlight Glow Ads -->
+                <div class="work-item reveal" data-category="design" style="--delay: 0.1s">
+                    <a href="https://drive.google.com/file/d/1vq6kiE3WMevECHrlGl_y2EBk705L09E6/view" target="_blank" rel="noopener">
+                        <div class="work-thumbnail">
+                            <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SSfwD95BANU8emIebI0ThBRFIYNdvT4JTkbrbQTP5DeIDsK2FyH8N-peCMRjeJaytEMcuZW4Q0JkeM1Mekt7LBogKIC9L4bPd--dPLJICoaYyVXkfrYRIKiAUeySGS98D6P0aAlCh_jKnOe3e6-NwvG0CrlFW4hAjEEpNTKcAh7oHYWNLMyCPJQ3WVHSDuBtg7DFYK8eOUP6mvvceCcUtmk5B5XAzfToQFPpHc=w1280" alt="Moonlight Glow Ad Campaign" class="work-img" loading="lazy">
+                            <div class="work-overlay">
+                                <span class="work-view">View Project</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="work-info">
+                        <span class="work-category">Advertising</span>
+                        <h3 class="work-title">Moonlight Glow — Ad Campaign</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Section -->
+    <div class="marquee-section">
+        <div class="marquee">
+            <div class="marquee-content">
+                <span>VIDEO EDITING</span>
+                <span class="marquee-dot"></span>
+                <span>GRAPHIC DESIGN</span>
+                <span class="marquee-dot"></span>
+                <span>AI SOLUTIONS</span>
+                <span class="marquee-dot"></span>
+                <span>MOTION GRAPHICS</span>
+                <span class="marquee-dot"></span>
+                <span>COLOR GRADING</span>
+                <span class="marquee-dot"></span>
+                <span>BRAND IDENTITY</span>
+                <span class="marquee-dot"></span>
+                <span>VIDEO EDITING</span>
+                <span class="marquee-dot"></span>
+                <span>GRAPHIC DESIGN</span>
+                <span class="marquee-dot"></span>
+                <span>AI SOLUTIONS</span>
+                <span class="marquee-dot"></span>
+                <span>MOTION GRAPHICS</span>
+                <span class="marquee-dot"></span>
+                <span>COLOR GRADING</span>
+                <span class="marquee-dot"></span>
+                <span>BRAND IDENTITY</span>
+                <span class="marquee-dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container glass-box section-glass">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title reveal">Let's Work Together</h2>
+                <div class="section-line reveal"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <p class="contact-desc">
+                        Have a project in mind? Let's bring your vision to life.
+                        I'm always open to discussing new projects, creative ideas, or opportunities.
+                    </p>
+                    <div class="contact-details">
+                        <a href="mailto:ramlajola.studio@gmail.com" class="contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="M22 4l-10 8L2 4"/>
+                            </svg>
+                            <span>ramlajola.studio@gmail.com</span>
+                        </a>
+                        <a href="tel:+639152354744" class="contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                            </svg>
+                            <span>+63 915 235 4744</span>
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/ramscreativestudio" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Behance">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form reveal" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" required placeholder=" ">
+                        <label for="name">Your Name</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required placeholder=" ">
+                        <label for="email">Your Email</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <select id="service" required>
+                            <option value="" disabled selected>Select a Service</option>
+                            <option value="video">Video Editing</option>
+                            <option value="design">Graphic Design</option>
+                            <option value="ai">AI Solutions</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="4" required placeholder=" "></textarea>
+                        <label for="message">Your Message</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Send Message</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-left">
+                <span class="logo-text">Ram Lajola</span>
+                <span class="logo-dot"></span>
+            </div>
+            <p class="footer-copy">&copy; 2026 Ram Lajola. All rights reserved.</p>
+            <div class="footer-right">
+                <a href="#home" class="back-to-top">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 19V5M5 12l7-7 7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
