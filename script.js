@@ -98,7 +98,7 @@
     });
 
     // Tagline typing effect
-    const taglineText = 'CREATIVE  STUDIO';
+    const taglineText = 'MOONFORGE  DIGITAL';
     let charIndex = 0;
     setTimeout(() => {
         const typeInterval = setInterval(() => {
