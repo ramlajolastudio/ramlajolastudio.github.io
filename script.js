@@ -98,7 +98,7 @@
     });
 
     // Tagline typing effect
-    const taglineText = 'MOONFORGE  DIGITAL';
+    const taglineText = 'MOONFLUX  DIGITAL';
     let charIndex = 0;
     setTimeout(() => {
         const typeInterval = setInterval(() => {
