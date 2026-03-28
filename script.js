@@ -106,10 +106,10 @@
             charIndex++;
             if (charIndex >= taglineText.length) {
                 clearInterval(typeInterval);
-                setTimeout(() => taglineEl.classList.add('typing-done'), 500);
+                setTimeout(() => taglineEl.classList.add('typing-done'), 200);
             }
-        }, 80);
-    }, 2000);
+        }, 40);
+    }, 600);
 
     // Exit intro after animations complete
     setTimeout(() => {
@@ -119,7 +119,7 @@
             document.body.classList.remove('intro-active');
             cancelAnimationFrame(introAnimId);
         }, 800);
-    }, 3800);
+    }, 1400);
 })();
 
 /* ===== PARTICLE BACKGROUND ===== */
@@ -225,13 +225,19 @@ const follower = document.querySelector('.cursor-follower');
 let cursorX = 0, cursorY = 0;
 let followerX = 0, followerY = 0;
 
+let mouseMoveRAF = null;
 document.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
     cursorX = e.clientX;
     cursorY = e.clientY;
-    cursor.style.left = cursorX + 'px';
-    cursor.style.top = cursorY + 'px';
+    if (!mouseMoveRAF) {
+        mouseMoveRAF = requestAnimationFrame(() => {
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            mouseMoveRAF = null;
+        });
+    }
 });
 
 function animateCursor() {
@@ -395,11 +401,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 /* ===== MAGNETIC BUTTON EFFECT ===== */
 document.querySelectorAll('.btn').forEach(btn => {
+    let btnRAF = null;
     btn.addEventListener('mousemove', (e) => {
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+        if (!btnRAF) {
+            btnRAF = requestAnimationFrame(() => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+                btnRAF = null;
+            });
+        }
     });
 
     btn.addEventListener('mouseleave', () => {
@@ -409,11 +421,17 @@ document.querySelectorAll('.btn').forEach(btn => {
 
 /* ===== TILT EFFECT ON SERVICE CARDS ===== */
 document.querySelectorAll('.service-card').forEach(card => {
+    let cardRAF = null;
     card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.transform = `perspective(800px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg) translateY(-4px)`;
+        if (!cardRAF) {
+            cardRAF = requestAnimationFrame(() => {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                card.style.transform = `perspective(800px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg) translateY(-4px)`;
+                cardRAF = null;
+            });
+        }
     });
 
     card.addEventListener('mouseleave', () => {
